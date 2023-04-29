@@ -1,9 +1,18 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [pull_requests]
+name: Main Pipeline
+
+run-name: Main Pipeline
+
+on: 
+  push
+
+env:
+  Operating_System: ubunto-latest
+
 jobs:
+  Check Version:
+    
   check-bats-version:
-    runs-on: ubuntu-latest
+    runs-on: $Operating_System
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
