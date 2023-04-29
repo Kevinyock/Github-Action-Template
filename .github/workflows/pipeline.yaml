@@ -1,0 +1,17 @@
+name: Main Pipeline
+
+run-name: Main Pipeline
+
+on: 
+  push
+
+env:
+  Operating_System: ubunto-latest
+
+jobs:
+  checkversion:
+    name: Check Version
+    runs-on: $Operating_System
+    steps:
+      - run: echo checking version 
+      - run: git --version
