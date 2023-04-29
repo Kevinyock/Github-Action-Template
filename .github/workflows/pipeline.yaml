@@ -9,11 +9,12 @@ env:
   Operating_System: ubunto-latest
 
 jobs:
-  runs-on: $Operating_System
   Check Version:
+    runs-on: $Operating_System
     steps:
       - run: echo checking version
   check-bats-version:
+    runs-on: $Operating_System
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
