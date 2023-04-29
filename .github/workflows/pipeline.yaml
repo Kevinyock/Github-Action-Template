@@ -9,7 +9,7 @@ env:
   Operating_System: ubunto-latest
 
 jobs:
-  checkVersion:
+  Check_Version:
     runs-on: $Operating_System
     steps:
       - run: echo checking version
