@@ -1,0 +1,24 @@
+name: Main Pipeline
+
+run-name: Main Pipeline
+
+on: 
+  push
+
+env:
+  Operating_System: ubunto-latest
+
+jobs:
+  Check Version:
+    runs-on: $Operating_System
+    steps:
+      - run: echo checking version
+  check-bats-version:
+    runs-on: $Operating_System
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+         node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
