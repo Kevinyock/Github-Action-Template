@@ -1,17 +1,13 @@
 name: Main Pipeline
 
-run-name: Main Pipeline
-
-on: 
-  [push]
-
-env:
-  Operating_System: ubuntu-latest
+on: push
 
 jobs:
   checkversion:
     name: Check Version
-    runs-on: $Operating_System
+    runs-on: ubuntu-latest
     steps:
       - run: echo checking version 
       - run: git --version
+
+  
