@@ -6,7 +6,7 @@ on:
   push
 
 env:
-  Operating_System: ubunto-latest
+  Operating_System: ubuntu-latest
 
 jobs:
   checkversion:
