@@ -3,7 +3,7 @@ name: Main Pipeline
 run-name: Main Pipeline
 
 on: 
-  push
+  [push]
 
 env:
   Operating_System: ubuntu-latest
