@@ -18,7 +18,7 @@ jobs:
 
         run: |
           echo "checking version"
-          echo "Main Branch name: $REPOSITORY_MAIN_BRANCH
+          echo "Main Branch name: $REPOSITORY_MAIN_BRANCH"
           python checkversion.py
 
   
