@@ -2,6 +2,9 @@ name: Main Pipeline
 
 on: push
 
+env:
+  MAIN_REPOSITORY_BRANCH: ${{ Variables.MAIN_REPOSITORY_BRANCH }}
+
 jobs:
   checkversion:
     name: Check Version
@@ -13,8 +16,6 @@ jobs:
           python-version: '3.10' # install the python version needed
 
       - name : running check version
-        env:
-          MAIN_REPOSITORY_BRANCH: ${{ Variables.MAIN_REPOSITORY_BRANCH }}
         run: echo checking version \n
              python checkversion.py
 
