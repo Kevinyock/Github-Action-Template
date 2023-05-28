@@ -15,7 +15,7 @@ jobs:
       - name : running check version
       - env:
         REPOSITORY_MAIN_BRANCH: ${{ variables.REPOSITORY_MAIN_BRANCH }}
-      - run: echo checking version 
-      - run: checkversion.py
+        run: echo checking version 
+        run: checkversion.py
 
   
