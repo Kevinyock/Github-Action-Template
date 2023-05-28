@@ -7,15 +7,15 @@ jobs:
     name: Check Version
     runs-on: ubuntu-latest
     steps:
-      name: setup python
-      uses: actions/setup-python@v2
+      - name: setup python
+      - uses: actions/setup-python@v2
         with:
           python-version: '3.10' # install the python version needed
 
-      name : running check version
-      env:
+      - name : running check version
+      - env:
         REPOSITORY_MAIN_BRANCH: ${{ variables.REPOSITORY_MAIN_BRANCH }}
-      run: echo checking version 
-      run: checkversion.py
+      - run: echo checking version 
+      - run: checkversion.py
 
   
