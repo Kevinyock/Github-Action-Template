@@ -2,13 +2,12 @@ name: Main Pipeline
 
 on: push
 
-env:
-  MAIN_REPOSITORY_BRANCH: ${{ REPOSITORY_MAIN_BRANCH }}
-
 jobs:
   checkversion:
     name: Check Version
     runs-on: ubuntu-latest
+    env:
+      REPOSITORY_MAIN_BRANCH: $REPOSITORY_MAIN_BRANCH
     steps:
       - name: setup python
         uses: actions/setup-python@v2
@@ -16,7 +15,10 @@ jobs:
           python-version: '3.10' # install the python version needed
 
       - name : running check version
-        run: echo checking version \n
-             python checkversion.py
+
+        run: |
+          echo "checking version"
+          echo "Main Branch name: $REPOSITORY_MAIN_BRANCH
+          python checkversion.py
 
   
