@@ -6,6 +6,9 @@ jobs:
   checkversion:
     name: Check Version
     runs-on: ubuntu-latest
+    runs:
+      using: 'node16'
+      main: 'main.js'
     env:
       REPOSITORY_MAIN_BRANCH: $REPOSITORY_MAIN_BRANCH
     steps:
@@ -17,8 +20,7 @@ jobs:
       - name : running check version
         run: |
           echo "checking version"
-          python ../utilities/checkversion.py
-          
+
       - name: Install dependencies
         run: |
           echo "Installing Dependencies..."
