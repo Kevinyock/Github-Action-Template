@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           echo "Installing Dependencies..."
+          echo "Use the latest pip"
+          python -m pip install -- upgrade pip
+          echo "Installing GitPython"
+          pip install GitPython
 
 
   
