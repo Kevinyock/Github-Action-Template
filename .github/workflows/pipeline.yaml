@@ -15,9 +15,14 @@ jobs:
           python-version: '3.10' # install the python version needed
 
       - name : running check version
-
         run: |
           echo "checking version"
           python ../utilities/checkversion.py
+          
+      - name: Install dependencies
+        run: |
+          echo "Installing Dependencies..."
 
+
+  
   
