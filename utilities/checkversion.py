@@ -1,7 +1,6 @@
 import os
 import glob
 import argparse
-import GitPython
 
 class CheckVersion:
     def __init__(self):
@@ -27,9 +26,6 @@ class CheckVersion:
         print("Getting Patch Version")
         return
 
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--test', help='test')
-    args = parser.parse_args()
+parser = argparse.ArgumentParser()
+parser.add_argument('--test', help='test')
+args = parser.parse_args()
