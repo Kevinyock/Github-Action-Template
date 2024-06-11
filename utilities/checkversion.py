@@ -1,10 +1,28 @@
+
+from git import Repo
 import os
 import glob
 import argparse
 
 class CheckVersion:
+
+    # Comparing Two Branches
+    repo = None
+    main_branch = None
+    development_branch = None
+
+    main_branch_name = "origin/main"
+
     def __init__(self):
-        pass
+        print("Initialize Check Version Class")
+        self.get_main_and_developing_branch()
+
+    def get_main_and_developing_branch(self):
+        self.repo = Repo(self.get_repo_directory)
+        self.main_branch = self.repo.commit(self.main_branch_name)
+        self.development_branch = self.repo.active_branch.name
+        print(self.main_branch)
+        print(self.development_branch)
 
     def checking_version(self):
         print("Getting a list of version_nuimber.txt")
@@ -25,6 +43,9 @@ class CheckVersion:
         print("Getting Minor Version")
         print("Getting Patch Version")
         return
+    
+    def get_repo_directory(self):
+        return os.chdir("..")
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--test', help='test')
