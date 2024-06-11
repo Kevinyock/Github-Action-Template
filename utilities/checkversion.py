@@ -50,3 +50,6 @@ class CheckVersion:
 parser = argparse.ArgumentParser()
 parser.add_argument('--test', help='test')
 args = parser.parse_args()
+
+if __name__ == "__main__":
+    checkVersion = CheckVersion()
