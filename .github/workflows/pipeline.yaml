@@ -18,8 +18,9 @@ jobs:
     runs-on: $Operating_System
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-python@v4
         with:
          node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: python checkversion.py
