@@ -1,7 +1,8 @@
 
-from git import Repo
+import git
 import os
 import glob
+import pathlib
 import argparse
 
 class CheckVersion:
@@ -12,15 +13,17 @@ class CheckVersion:
     development_branch = None
 
     main_branch_name = "origin/main"
+    development_branch_name = None
 
     def __init__(self):
         print("Initialize Check Version Class")
         self.get_main_and_developing_branch()
 
     def get_main_and_developing_branch(self):
-        self.repo = Repo(self.get_repo_directory)
+        self.repo = git.Repo(self.get_repo_directory())
         self.main_branch = self.repo.commit(self.main_branch_name)
-        self.development_branch = self.repo.active_branch.name
+        self.development_branch = self.repo.commit(self.repo.active_branch)
+
         print(self.main_branch)
         print(self.development_branch)
 
@@ -44,8 +47,10 @@ class CheckVersion:
         print("Getting Patch Version")
         return
     
-    def get_repo_directory(self):
-        return os.chdir("..")
+    def get_repo_directory(self) -> pathlib.Path:
+        path = pathlib.Path(__file__).parent.parent
+        print(path)
+        return path
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--test', help='test')
