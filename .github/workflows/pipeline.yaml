@@ -25,8 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           echo "Installing GitPython"
           pip install GitPython
-      - run: echo ${{ env.DEVOPS_DIR }}
-      - run: checkversion.py
+      - run: python checkversion.py
 
 
   
