@@ -26,7 +26,7 @@ jobs:
           echo "Installing GitPython"
           pip install GitPython
       - run: echo ${{ env.DEVOPS_DIR }}
-      - run: ${{ env.DEVOPS_DIR }}/checkversion.py
+      - run: checkversion.py
 
 
   
