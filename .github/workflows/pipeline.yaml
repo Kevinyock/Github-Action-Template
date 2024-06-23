@@ -27,11 +27,11 @@ jobs:
           pip install GitPython
       - uses: actions/checkout@v3
       - run: echo |
-              ***************************************
-              *                                     *
-              *            Check Verion             *
-              *                                     *
-              ***************************************
+              ***************************************\n
+              *                                     *\n
+              *            Check Verion             *\n
+              *                                     *\n
+              ***************************************\n
       - run: python "utilities/checkversion.py"
 
 
