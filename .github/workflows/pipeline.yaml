@@ -26,13 +26,12 @@ jobs:
           echo "Installing GitPython"
           pip install GitPython
       - uses: actions/checkout@v3
-      - run: echo ***************************************
-      - run: echo *                                     *
-      - run: echo *            Check Verion             *
-      - run: echo *                                     *
-      - run: echo ***************************************
-      - run: cd utilities
-      - run: python checkversion.py
+      - run: echo |
+              ***************************************
+              *                                     *
+              *            Check Verion             *
+              *                                     *
+              ***************************************
       - run: python "utilities/checkversion.py"
 
 
