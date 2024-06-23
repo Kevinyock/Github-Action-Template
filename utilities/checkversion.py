@@ -13,7 +13,7 @@ class CheckVersion:
     main_branch = None
     development_branch = None
 
-    main_branch_name = "origin/main"
+    main_branch_name = "main"
     development_branch_name = None
 
     logger = None
